@@ -52,7 +52,7 @@
         <!--Home-->
         <scene sceneID="oU4-Vu-hJm">
             <objects>
-                <tableViewController id="al0-xg-XMc" customClass="HomeTableViewController" sceneMemberID="viewController">
+                <tableViewController id="al0-xg-XMc" customClass="HomeTableTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xgM-LL-Jtb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
