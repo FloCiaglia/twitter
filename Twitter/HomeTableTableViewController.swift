@@ -9,15 +9,42 @@
 import UIKit
 
 class HomeTableTableViewController: UITableViewController {
+    
+    var tweetArray = [NSDictionary]()
+    var numberOfTweet: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        print("before calling loadTweet()")
+        loadTweet()
+        print("After calling loadTweet()")
+    
+    }
+    
+    
+    func loadTweet(){
+        
+        print("In loadTweet()")
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        
+        let myParams = ["count": 10]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: {(tweets: [NSDictionary]) in
+            
+            self.tweetArray.removeAll()
+            for tweet in tweets {
+                self.tweetArray.append(tweet)
+            }
+            
+            self.tableView.reloadData()
+            
+        }, failure: { (Error) in
+            print("Could not retreive tweets")
+        })
+        
+        print("The end of loadTweet()")
+        
     }
     
     
@@ -31,12 +58,16 @@ class HomeTableTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print("before pulling data from api")
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         
-        cell.userNameLabel.text = "a name"
-        cell.tweetContent.text = "Some content"
-    
+        let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+        print("After pulling data from api")
+        
+        cell.userNameLabel.text = user["name"] as? String
+        cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
+        
+        print("After displaying data from api")
         
         return cell
     }
@@ -52,7 +83,8 @@ class HomeTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return tweetArray.count
+        //return 5
     }
 
     /*
