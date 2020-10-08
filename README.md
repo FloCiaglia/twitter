@@ -2,7 +2,7 @@
 
 Twitter is a basic twitter app to read your tweets.
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## User Stories
 
@@ -38,4 +38,12 @@ Here's a walkthrough for the **staying logged in across restarts** user story:
 Here's a walkthrough for the **pull to refresh** and **infinte scroll** user stories:
 
 <img src='http://g.recordit.co/DDquIYXets.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+### Notes
+I didn't have many issues while implementing this first part of the Twitter app. However, I was stuck on one issue
+for a very long time. I didn't know what was not working. I had followed the instruction video step by step three times
+in a row, and I was sure I had done everything like shown. I asked for help on the Slack help channel and no one answered
+for days. This week, TAs have been very unresponsive. Eventually, I found out that everything was working correctly but tweets
+were not showing because I was not following anyone on my Twitter account. Thus, there were no Tweets to show. 
 
