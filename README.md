@@ -21,7 +21,17 @@ The following **bonus** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough for the login and logout user stories:
+Here's a walkthrough for the **login** and **logout** user stories:
+
+<img src='http://g.recordit.co/nwKbWgEXfw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+Here's a walkthrough for the **staying logged across restarts** user story:
+
+<img src='http://g.recordit.co/nwKbWgEXfw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+Here's a walkthrough for the **pull to refreash** and **infinte scroll** user stories:
 
 <img src='http://g.recordit.co/nwKbWgEXfw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
