@@ -45,5 +45,5 @@ I didn't have many issues while implementing this first part of the Twitter app.
 for a very long time. I didn't know what was not working. I had followed the instruction video step by step three times
 in a row, and I was sure I had done everything like shown. I asked for help on the Slack help channel and no one answered
 for days. This week, TAs have been very unresponsive. Eventually, I found out that everything was working correctly but tweets
-were not showing because I was not following anyone on my Twitter account. Thus, there were no Tweets to show. 
+were not showing because I was not following anyone on my Twitter account. Thus, there were no tweets to show. 
 
