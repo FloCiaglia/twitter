@@ -15,26 +15,29 @@ class HomeTableTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("before calling loadTweet()")
         loadTweet()
-        print("After calling loadTweet()")
     
     }
     
     
     func loadTweet(){
         
-        print("In loadTweet()")
+        //print("In loadTweet()")
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         
         let myParams = ["count": 10]
         
+       
+        
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: {(tweets: [NSDictionary]) in
             
             self.tweetArray.removeAll()
+            
+            
             for tweet in tweets {
+                
                 self.tweetArray.append(tweet)
+                
             }
             
             self.tableView.reloadData()
@@ -42,8 +45,6 @@ class HomeTableTableViewController: UITableViewController {
         }, failure: { (Error) in
             print("Could not retreive tweets")
         })
-        
-        print("The end of loadTweet()")
         
     }
     
@@ -58,16 +59,20 @@ class HomeTableTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("before pulling data from api")
+     
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
-        print("After pulling data from api")
         
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
         
-        print("After displaying data from api")
+        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
+        let data = try? Data(contentsOf: imageUrl!)
+        
+        if let imageData = data{
+            cell.profileImageView.image = UIImage(data: imageData)
+        }
         
         return cell
     }
@@ -83,6 +88,8 @@ class HomeTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print("this is the amount of tweets: " , tweetArray.count)
+        
         return tweetArray.count
         //return 5
     }
