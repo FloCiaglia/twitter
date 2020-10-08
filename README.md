@@ -30,12 +30,12 @@ Here's a walkthrough for the **login** and **logout** user stories:
 
 Here's a walkthrough for the **staying logged in across restarts** user story:
 
-<img src='http://g.recordit.co/DDquIYXets.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/vT2pROXBLb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
 
 Here's a walkthrough for the **pull to refresh** and **infinte scroll** user stories:
 
-<img src='http://g.recordit.co/nwKbWgEXfw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/DDquIYXets.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
