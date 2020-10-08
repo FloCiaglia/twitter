@@ -30,7 +30,7 @@ Here's a walkthrough for the **login** and **logout** user stories:
 
 Here's a walkthrough for the **staying logged in across restarts** user story:
 
-<img src='http://g.recordit.co/nwKbWgEXfw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/vT2pROXBLb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
