@@ -12,15 +12,19 @@ class HomeTableTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
     var numberOfTweet: Int!
+    
+    let myRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweet()
+        myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
     
     }
     
     
-    func loadTweet(){
+    @objc func loadTweet(){
         
         //print("In loadTweet()")
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
@@ -32,15 +36,14 @@ class HomeTableTableViewController: UITableViewController {
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: {(tweets: [NSDictionary]) in
             
             self.tweetArray.removeAll()
-            
-            
+    
             for tweet in tweets {
-                
                 self.tweetArray.append(tweet)
-                
             }
             
             self.tableView.reloadData()
+            
+            self.myRefreshControl.endRefreshing()
             
         }, failure: { (Error) in
             print("Could not retreive tweets")
